@@ -17,7 +17,10 @@ public class Main {
 	public static void main(String[] args) {
 		SpringApplication.run(Main.class, args);
 		Map<String, Integer> map = new RedisMap("myMap");
-		map.put("a",1);
-		System.out.println("Voila: " + map.get("b"));
+		var key = "a";
+		var value = 1;
+		System.out.printf("Putting %s=%d into the map.%n", key, value);
+		map.put(key, value);
+		System.out.printf("Getting %s from the map: %d%n", key, map.get(key));
 	}
 }
