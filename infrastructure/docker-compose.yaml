@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  redis:
+    image: redis:latest
+    container_name: redis-standalone-server
+    ports:
+      - "6379:6379"
+    volumes:
+      - ./redis_data:/data
+    environment:
+      - REDIS_PASSWORD=thorin # Password for the default user
+    command:
+      [
+        "redis-server",
+        "--requirepass", "thorin",
+        "--appendonly", "yes"
+      ]
+

@@ -37,3 +37,7 @@ bin/
 
 ### Mac OS ###
 .DS_Store
+
+### Redis data
+**/redis_data/**
+!**/redis_data/README.md
